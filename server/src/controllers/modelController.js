@@ -22,11 +22,7 @@ const getAllModels = (req, res) => {
 const getModelById = (req, res) => {
   try {
     const model = findModelById(req.params.id);
-    
-    if (!model) {
-      return res.status(404).json({ error: 'Model not found' });
-    }
-    
+    if (!model) return res.status(404).json({ error: 'Model not found' });
     res.json(model);
   } catch (error) {
     console.error('Error fetching model:', error);
@@ -41,22 +37,22 @@ const createModel = (req, res) => {
   try {
     const { name, description } = req.body;
     const modelId = req.modelId || uuidv4();
-    
-    // 모델 파일 검증
+
+    // 모델 파일은 필수
     if (!req.files || !req.files.modelFile) {
       return res.status(400).json({ error: 'Model file is required' });
     }
 
     const modelFile = req.files.modelFile[0];
+    const mtlFile = req.files.mtlFile ? req.files.mtlFile[0] : null;
     const textures = req.files.textures || [];
 
-    // 텍스처 파일 정보 생성 (폴더 구조 포함)
+    // 텍스처 정보 정리
     const textureInfo = textures.map(texture => {
-      // originalname에서 폴더 경로 추출
       const relativePath = texture.originalname;
       const dirname = path.dirname(relativePath);
       const basename = path.basename(relativePath);
-      
+
       return {
         filename: basename,
         originalPath: relativePath,
@@ -67,10 +63,10 @@ const createModel = (req, res) => {
       };
     });
 
-    // 새 모델 객체 생성
+    // 모델 객체 생성
     const newModel = {
       id: modelId,
-      name: name || modelFile.originalname,
+      name: name || path.parse(modelFile.originalname).name,
       description: description || '',
       modelFile: {
         filename: modelFile.filename,
@@ -78,15 +74,21 @@ const createModel = (req, res) => {
         mimetype: modelFile.mimetype,
         size: modelFile.size
       },
+      mtlFile: mtlFile
+        ? {
+            filename: mtlFile.filename,
+            path: `/uploads/${modelId}/${mtlFile.filename}`,
+            mimetype: mtlFile.mimetype,
+            size: mtlFile.size
+          }
+        : null,
       textures: textureInfo,
-      textureCount: textures.length,
+      textureCount: textureInfo.length,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
 
-    // 데이터베이스에 추가
     const savedModel = addModel(newModel);
-
     res.status(201).json(savedModel);
   } catch (error) {
     console.error('Error uploading model:', error);
@@ -100,18 +102,14 @@ const createModel = (req, res) => {
 const removeModel = (req, res) => {
   try {
     const model = deleteModel(req.params.id);
-    
-    if (!model) {
-      return res.status(404).json({ error: 'Model not found' });
-    }
+    if (!model) return res.status(404).json({ error: 'Model not found' });
 
-    // 파일 시스템에서 파일 삭제
     const modelDir = path.join(__dirname, '../../uploads', model.id);
     if (fs.existsSync(modelDir)) {
       fs.rmSync(modelDir, { recursive: true, force: true });
     }
 
-    res.json({ 
+    res.json({
       message: 'Model deleted successfully',
       deletedModel: model
     });
@@ -125,5 +123,5 @@ module.exports = {
   getAllModels,
   getModelById,
   createModel,
-  removeModel,
+  removeModel
 };

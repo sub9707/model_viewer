@@ -25,5 +25,6 @@ export interface UploadModelData {
   name: string;
   description: string;
   modelFile: File;
+  mtlFile?: File | null;
   textures: File[];
 }
