@@ -13,7 +13,8 @@ const TextureManager: React.FC<TextureManagerProps> = ({ model, onRefresh }) => 
     /\.(jpg|jpeg|png|gif|bmp|tga)$/i.test(t.filename)
   );
 
-  const hasMTL = model.textures.some(t => 
+  // ✅ MTL 파일 확인: model.mtlFile 또는 textures 배열에서 찾기
+  const hasMTL = model.mtlFile !== null || model.textures.some(t => 
     t.filename.toLowerCase().endsWith('.mtl')
   );
 

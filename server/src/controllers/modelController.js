@@ -47,17 +47,33 @@ const createModel = (req, res) => {
     const mtlFile = req.files.mtlFile ? req.files.mtlFile[0] : null;
     const textures = req.files.textures || [];
 
+    console.log('📦 Uploaded files:');
+    console.log('  Model:', modelFile.filename);
+    if (mtlFile) console.log('  MTL:', mtlFile.filename);
+    console.log('  Textures:', textures.length);
+
     // 텍스처 정보 정리
     const textureInfo = textures.map(texture => {
+      // originalname에서 상대 경로 추출
       const relativePath = texture.originalname;
       const dirname = path.dirname(relativePath);
       const basename = path.basename(relativePath);
 
+      // 폴더 경로 정리 ('.' 제거)
+      const folderPath = dirname === '.' ? '' : dirname.replace(/\\/g, '/');
+
+      // 실제 저장된 경로 (서버의 실제 파일 위치)
+      const storedPath = folderPath 
+        ? `/uploads/${modelId}/textures/${folderPath}/${basename}`
+        : `/uploads/${modelId}/textures/${basename}`;
+
+      console.log(`    ${relativePath} -> ${storedPath}`);
+
       return {
         filename: basename,
         originalPath: relativePath,
-        folderPath: dirname === '.' ? '' : dirname,
-        path: `/uploads/${modelId}/textures/${relativePath}`,
+        folderPath: folderPath,
+        path: storedPath,
         mimetype: texture.mimetype,
         size: texture.size
       };
@@ -87,6 +103,8 @@ const createModel = (req, res) => {
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
     };
+
+    console.log('✅ Model saved:', modelId);
 
     const savedModel = addModel(newModel);
     res.status(201).json(savedModel);

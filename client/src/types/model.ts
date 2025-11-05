@@ -15,6 +15,7 @@ export interface Model {
   name: string;
   description: string;
   modelFile: ModelFile;
+  mtlFile: ModelFile | null;
   textures: TextureFile[];
   textureCount: number;
   createdAt: string;

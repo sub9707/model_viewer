@@ -95,42 +95,41 @@ const ModelViewerPage: React.FC = () => {
                 <p><strong>크기:</strong> {formatFileSize(model.modelFile.size)}</p>
               </div>
 
+              {/* ✅ MTL 파일 정보 별도 표시 */}
+              {model.mtlFile && (
+                <div className="detail-section">
+                  <h4>재질 파일 (MTL)</h4>
+                  <div className="texture-list-compact">
+                    <div className="texture-item mtl-file">
+                      <span className="texture-name">
+                        📄 {model.mtlFile.filename}
+                      </span>
+                      <span className="texture-size">
+                        {formatFileSize(model.mtlFile.size)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {model.textures.length > 0 && (
                 <div className="detail-section">
                   <h4>텍스처 ({model.textureCount || model.textures.length}개)</h4>
                   <div className="texture-list-compact">
-                    {/* MTL 파일 먼저 표시 */}
-                    {model.textures
-                      .filter(t => t.filename.toLowerCase().endsWith('.mtl'))
-                      .map((texture, idx) => (
-                        <div key={`mtl-${idx}`} className="texture-item mtl-file">
-                          <span className="texture-name">
-                            📄 {texture.folderPath && `${texture.folderPath}/`}
-                            {texture.filename}
-                          </span>
-                          <span className="texture-size">
-                            {formatFileSize(texture.size)}
-                          </span>
-                        </div>
-                      ))}
-                    {/* 나머지 파일들 */}
-                    {model.textures
-                      .filter(t => !t.filename.toLowerCase().endsWith('.mtl'))
-                      .slice(0, 10)
-                      .map((texture, idx) => (
-                        <div key={idx} className="texture-item">
-                          <span className="texture-name">
-                            {texture.folderPath && `${texture.folderPath}/`}
-                            {texture.filename}
-                          </span>
-                          <span className="texture-size">
-                            {formatFileSize(texture.size)}
-                          </span>
-                        </div>
-                      ))}
-                    {model.textures.filter(t => !t.filename.toLowerCase().endsWith('.mtl')).length > 10 && (
+                    {model.textures.slice(0, 10).map((texture, idx) => (
+                      <div key={idx} className="texture-item">
+                        <span className="texture-name">
+                          {texture.folderPath && `${texture.folderPath}/`}
+                          {texture.filename}
+                        </span>
+                        <span className="texture-size">
+                          {formatFileSize(texture.size)}
+                        </span>
+                      </div>
+                    ))}
+                    {model.textures.length > 10 && (
                       <p className="texture-more">
-                        ... 외 {model.textures.filter(t => !t.filename.toLowerCase().endsWith('.mtl')).length - 10}개
+                        ... 외 {model.textures.length - 10}개
                       </p>
                     )}
                   </div>

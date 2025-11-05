@@ -1,17 +1,17 @@
 [
   {
-    "id": "f3373cc5-5852-4fbd-b843-79b807c3cc0a",
-    "name": "test_model",
-    "description": "테스트용 모델",
+    "id": "79f0cdf7-e44e-41e0-a89c-eac5dd12c358",
+    "name": "테스트 모델",
+    "description": "테스트 모델",
     "modelFile": {
       "filename": "ëì¬KBO.obj",
-      "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/ëì¬KBO.obj",
+      "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/ëì¬KBO.obj",
       "mimetype": "application/octet-stream",
       "size": 1916962
     },
     "mtlFile": {
       "filename": "ëì¬KBO.mtl",
-      "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/ëì¬KBO.mtl",
+      "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/ëì¬KBO.mtl",
       "mimetype": "application/octet-stream",
       "size": 2909
     },
@@ -20,7 +20,7 @@
         "filename": "Leather_Blue.jpg",
         "originalPath": "Leather_Blue.jpg",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/Leather_Blue.jpg",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/Leather_Blue.jpg",
         "mimetype": "image/jpeg",
         "size": 27520
       },
@@ -28,7 +28,7 @@
         "filename": "M_771571061_b0a9833ca3_o.jpg",
         "originalPath": "M_771571061_b0a9833ca3_o.jpg",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/M_771571061_b0a9833ca3_o.jpg",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/M_771571061_b0a9833ca3_o.jpg",
         "mimetype": "image/jpeg",
         "size": 494986
       },
@@ -36,7 +36,7 @@
         "filename": "__.png",
         "originalPath": "__.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/__.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/__.png",
         "mimetype": "image/png",
         "size": 2892390
       },
@@ -44,7 +44,7 @@
         "filename": "___41_4x.png",
         "originalPath": "___41_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___41_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___41_4x.png",
         "mimetype": "image/png",
         "size": 5165718
       },
@@ -52,7 +52,7 @@
         "filename": "___45_4x.png",
         "originalPath": "___45_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___45_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___45_4x.png",
         "mimetype": "image/png",
         "size": 3090855
       },
@@ -60,7 +60,7 @@
         "filename": "___46_4x.png",
         "originalPath": "___46_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___46_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___46_4x.png",
         "mimetype": "image/png",
         "size": 23903
       },
@@ -68,7 +68,7 @@
         "filename": "___49_4x.png",
         "originalPath": "___49_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___49_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___49_4x.png",
         "mimetype": "image/png",
         "size": 2354737
       },
@@ -76,7 +76,7 @@
         "filename": "___50_4x1.png",
         "originalPath": "___50_4x1.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___50_4x1.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___50_4x1.png",
         "mimetype": "image/png",
         "size": 740200
       },
@@ -84,7 +84,7 @@
         "filename": "___52_4x.png",
         "originalPath": "___52_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___52_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___52_4x.png",
         "mimetype": "image/png",
         "size": 761936
       },
@@ -92,7 +92,7 @@
         "filename": "___81_4x.png",
         "originalPath": "___81_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___81_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___81_4x.png",
         "mimetype": "image/png",
         "size": 656136
       },
@@ -100,7 +100,7 @@
         "filename": "___89_4x.png",
         "originalPath": "___89_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___89_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___89_4x.png",
         "mimetype": "image/png",
         "size": 6311433
       },
@@ -108,13 +108,13 @@
         "filename": "___9_4x.png",
         "originalPath": "___9_4x.png",
         "folderPath": "",
-        "path": "/uploads/f3373cc5-5852-4fbd-b843-79b807c3cc0a/textures/___9_4x.png",
+        "path": "/uploads/79f0cdf7-e44e-41e0-a89c-eac5dd12c358/textures/___9_4x.png",
         "mimetype": "image/png",
         "size": 10187294
       }
     ],
     "textureCount": 12,
-    "createdAt": "2025-11-05T10:26:53.892Z",
-    "updatedAt": "2025-11-05T10:26:53.892Z"
+    "createdAt": "2025-11-05T10:50:05.707Z",
+    "updatedAt": "2025-11-05T10:50:05.711Z"
   }
 ]
