@@ -427,10 +427,52 @@ body {
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
-.control-btn:hover {
+.control-btn:hover:not(:disabled) {
   background-color: #0056b3;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.control-btn-primary {
+  background-color: #28a745;
+}
+
+.control-btn-primary:hover {
+  background-color: #218838;
+}
+
+/* Ground Texture Select */
+.ground-texture-select {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: inherit;
+  outline: none;
+}
+
+.ground-texture-select:hover {
+  background-color: #0056b3;
+}
+
+.ground-texture-select:focus {
+  background-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.ground-texture-select option {
+  background-color: white;
+  color: #333;
 }
 
 .viewer-info {
@@ -477,6 +519,74 @@ body {
   color: #666;
 }
 
+/* First Person Mode Overlay */
+.fps-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+.fps-instructions {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  max-width: 400px;
+}
+
+.fps-instructions h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.fps-instructions p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.fps-instructions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.fps-instructions li {
+  padding: 8px 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fps-instructions li:last-child {
+  border-bottom: none;
+}
+
+.fps-instructions strong {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Model Details */
 .model-details {
   padding: 0;
 }
